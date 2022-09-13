@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+4 0744 638 738</p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
@@ -59,8 +59,6 @@
         </div>
     </div>
     <!-- Topbar End -->
-
-
     <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
@@ -94,8 +92,6 @@
         </div>
     </div>
     <!-- Navbar End -->
-
-
     <!-- Header Start -->
     <div class="container-fluid page-header">
         <div class="container">
@@ -110,48 +106,33 @@
         </div>
     </div>
     <!-- Header End -->
-
     <!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center mb-3 pb-3">
-                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contact</h6>
-                <h1>Contact For Any Query</h1>
-            </div>
+    <div class="container-fluid py-5" style="padding-top: 1rem !important ">
+        <div class="container py-5"  style="padding-top: 1rem !important ">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="contact-form bg-white" style="padding: 30px;">
                         <div class="control-group">
                             <p><i class="fa fa-map-marker-alt mr-2"></i>45a str. Principala, sat Carlibaba, Suceava</p>
-                            </div>
-                            <div class="control-group">
-                                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</p>
-                            </div>
-                            <div class="control-group">
-                                <p><i class="fa fa-phone-alt mr-2"></i>0752393716</p>
-                            </div>
-                            <div class="control-group">
-                                <p><i class="fa fa-envelope mr-2"></i>adrian10nagy@gmail.com</p>
+                        </div>
+                        <div class="control-group">
+                            <p><i class="fa fa-phone-alt mr-2"></i>+4 0744 638 738</p>
+                        </div>
+                        <div class="control-group">
+                            <p><i class="fa fa-phone-alt mr-2"></i>+4 0752 393 716</p>
+                        </div>
+                        <div class="control-group">
+                            <p><i class="fa fa-envelope mr-2"></i>adrian10nagy@gmail.com</p>
 
-                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-6">
+
+                <div class="col-lg-12">
                     <div class="contact-form bg-white" style="padding: 30px;">
-                       
-                            <div class="control-group">
-                                <iframe
-                                width="600"
-                                height="450"
-                                style="border:0"
-                                loading="lazy"
-                                allowfullscreen
-                                referrerpolicy="no-referrer-when-downgrade"
-                                src="https://www.google.com/maps/embed/v1/place?key=API_KEY
-                                  &q=Space+Needle,Seattle+WA">
-                              </iframe>
-                            </div>
+
+                        <div class="control-group" id="googleMap" style="width:100%;height:600px;">
+                        </div>
 
                     </div>
                 </div>
@@ -159,8 +140,6 @@
         </div>
     </div>
     <!-- Contact End -->
-
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
         <div class="row pt-5">
@@ -221,18 +200,18 @@
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white-50">Copyright &copy; <a href="#">Domain</a>. All Rights Reserved.</a>
+                <p class="m-0 text-white-50">
+                    Copyright &copy; <a href="#">Domain</a>. All Rights Reserved.</a>
                 </p>
             </div>
             <div class="col-lg-6 text-center text-md-right">
-                <p class="m-0 text-white-50">Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                <p class="m-0 text-white-50">
+                    Designed by <a href="https://htmlcodex.com">HTML Codex</a>
                 </p>
             </div>
         </div>
     </div>
     <!-- Footer End -->
-
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
@@ -252,6 +231,26 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        function myMap() {
+            const myLatLng = { lat: 47.571929, lng: 25.125757 };
+
+            var mapProp = {
+                center: myLatLng,
+                zoom: 17,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: "Hello World!",
+            });
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjq_VRwISYy0HVQnoDvukXl2Qwq0WsF7Y&callback=myMap"></script>
+
 </body>
 
 </html>
